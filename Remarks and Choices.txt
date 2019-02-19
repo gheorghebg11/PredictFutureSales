@@ -1,0 +1,11 @@
+Data Engineering
+
+- Returned items: 1023 days / 1034 have returned items, with 7356 items returned / 2935849 transactions. This is not that many items. When looking at the value returned, a typical day would have 10.000$ returned vs 5.000.000$ bought, so 1/500 in value returned, which is not that much, especially that all days are pretty similar in this regard. I might for now just remove those columns.
+
+- Negative prices: there is 1 item with negative price, remove it.
+
+- shops.csv: shops names, ignored
+- items.csv: items names, ignored
+- items_categories.csv: could combine categories together, for now let them be separate, as they are already assembled in some decent way. Added the category of the item on main df, as it is not there.
+
+- 
