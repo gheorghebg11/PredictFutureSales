@@ -1,11 +1,15 @@
-Data Engineering
+Data Engineering on the file sales_train_v2.csv (started in v2 from Kaggle).
 
-- Returned items: 1023 days / 1034 have returned items, with 7356 items returned / 2935849 transactions. This is not that many items. When looking at the value returned, a typical day would have 10.000$ returned vs 5.000.000$ bought, so 1/500 in value returned, which is not that much, especially that all days are pretty similar in this regard. I might for now just remove those columns.
+We did in this order the following operations :
+1) no NA, no null, 6 duplicated rows (but probably different clients, etc)
 
-- Negative prices: there is 1 item with negative price, remove it.
+2) Negative values in item_cnt_day, i.e., returned items: 1023 days / 1034 have returned items, with 7356 items returned / 2935849 transactions. This is not that many items. When looking at the value returned, a typical day would have 10.000$ returned vs 5.000.000$ bought, so 1/500 in value returned, which is not that much, especially that all days are pretty similar in this regard. I might for now just remove those columns. Ignoring is probably okay too.
 
-- shops.csv: shops names, ignored
-- items.csv: items names, ignored
-- items_categories.csv: could combine categories together, for now let them be separate, as they are already assembled in some decent way. Added the category of the item on main df, as it is not there.
+3) Negative prices: there is 1 item with negative price, remove it.
 
-- 
+4) shops.csv: shops names, ignored
+   items.csv: items names, ignored
+   items_categories.csv: could combine categories together, for now let them be separate, as they are already assembled in some decent way. 
+   ---> Added the category of the item on main df from this file, as it was not there.
+
+5) Downcasting the types from int64 to int16 and float64 to float32, saving memory from 156MB to 53MB, that's awesome.
