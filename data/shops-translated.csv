@@ -9,8 +9,8 @@ shop_id,shop_name_translated
 7,"Voronezh TRC ""Maksimir"""
 8,"Voronezh TRC City-Park ""Grad"""
 9,Outbound Trade
-10,Zhukovsky Str. Chkalov 39m?
-11,Zhukovsky Str. Chkalov 39 m²
+10,Zhukovsky Str. Chkalov 39m
+11,Zhukovsky Str. Chkalov 39m
 12,Online shop Emergency
 13,"Kazan TC ""Behetle"""
 14,"Kazan TC ""ParkHaus"" II"
@@ -56,6 +56,6 @@ shop_id,shop_name_translated
 54,"Khimki ТЦ ""Mega"""
 55,Digital warehouse 1C-Online
 56,"Chekhov SEC ""Carnival"""
-57,"Yakutsk Ordzhonikidze, 56"
-58,Yakutsk Central shopping center
+57,"Yakutsk Ordzhonikidze, 56 francs"
+58,"Yakutsk TC ""Central"" franc"
 59,"Yaroslavl Shopping center ""Altair"""

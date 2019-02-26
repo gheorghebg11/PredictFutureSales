@@ -12,7 +12,7 @@ np.set_printoptions(precision=3, suppress=True, threshold=np.nan)
 pd.set_option('display.max_rows', 10)
 pd.set_option('display.max_columns', 20)
 pd.set_option('display.width', 1000)
-pd.set_option('display.float_format', '{:.1f}'.format)
+pd.set_option('display.float_format', '{:2.2f}'.format)
 
 ## Load the Data
 data_dir = os.path.join(os.getcwd(), 'data')
@@ -21,11 +21,10 @@ data_dir = os.path.join(os.getcwd(), 'data')
 dict_types = {'date_block_num':np.int8, 'shop_id':np.int8, 'category_id':np.int8, 'item_id': np.int16, 'item_price':np.float32, 'item_cnt_day':np.int16}
 df_train = pd.read_csv(os.path.join(data_dir, 'sales_train_v3.csv'), dtype = dict_types)
 
-#df_items_and_cats = pd.read_csv(os.path.join(data_dir, 'items-translated.csv'))
+df_items_and_cats = pd.read_csv(os.path.join(data_dir, 'items-translated.csv'))
 
 ## Some global variables
 nbr_days = df_train['date'].value_counts().shape[0]
-
 
 ## Some Functions
 def fix_returned_items(df):
@@ -71,7 +70,7 @@ if study_items_and_cats:
 	print(df_items_and_cats.info())
 	print(df_items_and_cats.describe())
 
-study_training_set = False
+study_training_set = True
 if study_training_set:
 	print(df_train.isnull().sum()) #no null
 	print(df_train.isna().sum()) # no na
@@ -90,19 +89,17 @@ if study_training_set:
 	for col in df_train.columns:
 		print(col, df_train[col].max())
 	df_train['date_block_num'] = df_train['date_block_num'].astype(np.int8)
-	df_train['shop_id'] = df_train['shop_id'].astype(np.int8)
+		df_train['shop_id'] = df_train['shop_id'].astype(np.int8)
 	df_train['category_id'] = df_train['category_id'].astype(np.int8)
 	df_train['item_id'] = df_train['item_id'].astype(np.int16)
-	df_train['item_price'] = df_train['item_id'].astype(np.float32)
-	#print(df_train['item_cnt_day'].unique()) # seems to all be int
+	df_train['item_price'] = df_train['item_price'].astype(np.float32)
+	print(df_train['item_cnt_day'].unique()) # seems to all be int
 	df_train['item_cnt_day'] = df_train['item_cnt_day'].astype(np.int16)
 
 	df_train.to_csv(os.path.join(data_dir, 'sales_train_v3.csv'), index=False)
 	# Create dict_types at beginning of doc to open with these types
 
 print(df_train.head())
-
-
 
 
 
