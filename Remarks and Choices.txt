@@ -2,4 +2,9 @@ Random Remarks:
 
 - It would be helpful to have a column with the value of the sale, i.e., the dot product of the number of items sold and their price, but this seems to be redundant, as the NN should surely consider this value on its own. Adding it manually feels like we would unnecessarily enlarge the dataset size.
 
+Don't Forget to:
 - Set to 0 the sells of the outdated items in test set
+- clip the answer to [0,20]
+
+In Jupyter:
+- add clipping at beginning. If clip at th eend, might as well clip at beginning ? At least it avoid exploding numbers and we can play with int8
